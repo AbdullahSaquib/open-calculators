@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Linear Acceleration - Online Calculators</title>
+    <meta name="description" content="linear acceleration calculator. &lt;p&gt;In the world of physics, kinematics is the branch that deals with the motion of objects without considering the forces that cause that motion. One…">
+    <meta name="keywords" content="Physics, Kinematics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +46,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="u" class="form-label">Initial Speed (u)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="u" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="u__units_list"></select></span>
     </div>
     
     
@@ -59,12 +60,41 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="v" class="form-label">Final Speed (v)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="v" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="v__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="t" class="form-label">Time Taken (t)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="t" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="t__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="a" class="form-label">Acceleration (a)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="a" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="a__units_list"></select></span>
     </div>
     
     
@@ -76,8 +106,25 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Linear Acceleration</h1>
+    <p>In the world of physics, kinematics is the branch that deals with the motion of objects without considering the forces that cause that motion. One of the key concepts in kinematics is acceleration, which is the rate at which an object changes its velocity. When the velocity of an object changes, it can be due to a change in its speed, direction, or both. In this article, we will explore the concept of linear acceleration in kinematics, including its formula and some practical examples.</p>
+	<h2>Linear Acceleration Formula</h2>
+	<p>Linear acceleration is the rate at which an object changes its velocity in a straight line. The formula for linear acceleration is given by:</p>
+	<p>a = (v - u) / t</p>
+	<p>Where:</p>
+	<ul>
+		<li>a = Linear acceleration (m/s²)</li>
+		<li>u = Initial velocity (m/s)</li>
+		<li>v = Final velocity (m/s)</li>
+		<li>t = Time taken (s)</li>
+	</ul>
+	<p>The above formula tells us that the linear acceleration of an object is equal to the change in its velocity over a certain period of time. The units of linear acceleration are meters per second squared (m/s²), which means that the acceleration of an object increases or decreases by a certain amount every second.</p>
+	<h2>Example</h2>
+	<p>Let's say that a car is traveling at a speed of 20 m/s and it accelerates to a speed of 30 m/s in 5 seconds. Using the formula for linear acceleration, we can find the acceleration of the car as follows:</p>
+	<p>a = (30 - 20) / 5 = 2 m/s²</p>
+	<p>This means that the car's velocity increased by 2 meters per second every second. Another way to understand this is to say that the car's speed increased by 2 meters per second every second for 5 seconds.</p>
+	<h2>Applications</h2>
+	<p>Linear acceleration is an important concept in many fields, including physics, engineering, and sports. In physics and engineering, it is used to describe the motion of objects and to design machines that require precise control over acceleration. In sports, linear acceleration is an essential component of running, sprinting, and jumping, where athletes need to accelerate quickly to achieve their maximum speed or height.</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,54 +152,79 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "u": ({  u,  v,  t,  a,  })  => v-a*t,
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "v": ({  u,  v,  t,  a,  })  => v=u+a*t,
+              
+            "t": ({  u,  v,  t,  a,  })  => (v-u)/a,
+              
+            "a": ({  u,  v,  t,  a,  })  => (v-u)/t,
              
         }
 
         const units = {
             
-            "": [
+            "56ab0076-0eb2-442b-acaf-55d794485ca0": [
+                {
+                "unit_short": "m/s",
+                "unit_long": "Meter/second",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
                 
             ],
-            "": [
+            "56ab0076-0eb2-442b-acaf-55d794485ca0": [
+                {
+                "unit_short": "m/s",
+                "unit_long": "Meter/second",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                
+            ],
+            "fe5c012e-69b3-4950-9b42-cb2e6a7cf740": [
+                {
+                "unit_short": "s",
+                "unit_long": "Seconds",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                
+            ],
+            "e115ad21-f32c-4b78-9394-fa0fa11b58bc": [
+                {
+                "unit_short": "m/s^2",
+                "unit_long": "meter-per-second-squared",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
                 
             ],
         }
 
         const inputState = {
             
-            "n": {
+            "u": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "56ab0076-0eb2-442b-acaf-55d794485ca0",
                 
             },
-            "f": {
+            "v": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "56ab0076-0eb2-442b-acaf-55d794485ca0",
+                
+            },
+            "t": {
+                
+                "units": "fe5c012e-69b3-4950-9b42-cb2e6a7cf740",
+                
+            },
+            "a": {
+                
+                "units": "e115ad21-f32c-4b78-9394-fa0fa11b58bc",
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}

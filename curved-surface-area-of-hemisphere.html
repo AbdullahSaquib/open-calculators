@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Curved Surface Area of Hemisphere - Online Calculators</title>
+    <meta name="description" content="curved surface area of hemisphere calculator. &lt;p&gt;A hemisphere is a half of a sphere, and it is a three-dimensional shape that is perfectly round, just like a ball. The curved surface area of a he…">
+    <meta name="keywords" content="Mathematics, Mensuration, Sphere, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +46,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="r" class="form-label">Radius of sphere</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
-        data-has-calculator=1
+        <input type="number" id="r" class="input form-control"
+        
         value=None>
+        <span><select class="form-select" name="" id="r__units_list"></select></span>
     </div>
     
     
@@ -59,12 +60,13 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="a" class="form-label">Surface area</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="a" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="a__units_list"></select></span>
     </div>
     
     
@@ -72,12 +74,53 @@
 </div>
         
         
+        <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#advanced-inputs" aria-expanded="false" aria-controls="advanced-inputs">
+            Advanced Inputs
+        </button>
+        <div class="collapse" id="advanced-inputs">
+            
+            <div class="mb-3">
+    <label for="Pi" class="form-label">Pi</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="Pi" class="input form-control"
+        
+        value=3.1415>
     </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+            
+        </div>
+        
+    </div>
+    
+    <h2 class="display-8 fw-normal">Other Similar Calculators</h2>
+    
+    <a href="/whole-surface-area-of-hemisphere">Whole Surface Area of Hemisphere</a>
+    </br>
+    
+    <a href="/volume-of-hemisphere">Volume of Hemisphere</a>
+    </br>
+    
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Curved Surface Area of Hemisphere</h1>
+    <p>A hemisphere is a half of a sphere, and it is a three-dimensional shape that is perfectly round, just like a ball. The curved surface area of a hemisphere is the measure of the total area of the surface of the hemisphere without the area of the base, and it is a critical aspect of geometry that is widely used in many fields, including physics, engineering, and mathematics.</p>
+<h2>Formula for Curved Surface Area of a Hemisphere</h2>
+<p>To calculate the curved surface area of a hemisphere, you need to know the radius of the hemisphere, which is the distance from the center of the hemisphere to the outermost point on the surface of the hemisphere. Once you have the radius, you can use the following formula to calculate the curved surface area of the hemisphere:</p>
+<p><strong>Curved Surface Area of Hemisphere <span class="latex">A= 2 \pi r^2</span></strong></p>
+<p>where <em>r</em> is the radius of the hemisphere and <em>pi</em> is a mathematical constant that is approximately equal to 3.14.</p>
+<h2>Example Calculation</h2>
+<p>For example, if the radius of the hemisphere is 5 cm, the curved surface area of the hemisphere would be:</p>
+<p><strong>Curved Surface Area of Hemisphere 
+<span class="latex">A= 2 \times 3.14 \times (5 cm)^2 = 157 cm^2</span></strong></p>
+<h2>Important Note</h2>
+<p>It is essential to note that the curved surface area of a hemisphere does not include the area of the base of the hemisphere, which is a flat circle. To calculate the total surface area of a hemisphere, you need to add the area of the base of the hemisphere to the curved surface area.</p>
+<h2>Applications</h2>
+<p>The curved surface area of a hemisphere is a crucial concept in many fields, and it is used in a wide range of applications, including calculating the volume of a hemisphere, determining the dimensions of hemispherical containers, and solving various geometric problems. Understanding how to calculate the curved surface area of a hemisphere is an essential skill that can be applied in many different contexts.</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,35 +148,103 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
-             
-            "n": ({  n,  f,  })  => invfactorial(f),
-              
-            "f": ({  n,  f,  })  => factorial(n),
-             
+               
+            "a": ({  r,  a,  Pi,  })  => 2*Pi*r*r,
+               
         }
 
         const units = {
             
-            "": [
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                
+            ],
+            "7717be6e-7d7e-41a3-960c-ce617ca7f2e1": [
+                {
+                "unit_short": "m^2",
+                "unit_long": "meter-square",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "mm^2",
+                "unit_long": "millimetres-square",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "cm^2",
+                "unit_long": "centimeter-square",
+                "toSI": x => x*0.0001,
+                "toUnit": x => x/0.0001
+                },
+                {
+                "unit_short": "km^2",
+                "unit_long": "kilometres-square",
+                "toSI": x => x*1000000.0,
+                "toUnit": x => x/1000000.0
+                },
                 
             ],
             "": [
@@ -143,13 +254,17 @@ function invfactorial(y, start=1) {
 
         const inputState = {
             
-            "n": {
+            "r": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
                 
             },
-            "f": {
+            "a": {
+                
+                "units": "7717be6e-7d7e-41a3-960c-ce617ca7f2e1",
+                
+            },
+            "Pi": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

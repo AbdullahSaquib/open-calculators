@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Diagonal of Cube - Online Calculators</title>
+    <meta name="description" content="diagonal of cube calculator. Let a be the edge of the cube .the diagonal of cube is given by,
+
+&lt;p class=&quot;latex&quot;&gt;d=\sqrt{3}a&lt;/p&gt;">
+    <meta name="keywords" content="Mathematics, Mensuration, Cube, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +48,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="a" class="form-label">Edge of Cube</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="a" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="a__units_list"></select></span>
     </div>
     
     
@@ -59,12 +62,13 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="d" class="form-label">Diagonal of cube</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="d" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="d__units_list"></select></span>
     </div>
     
     
@@ -76,8 +80,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Diagonal of Cube</h1>
+    Let a be the edge of the cube .the diagonal of cube is given by,
+
+<p class="latex">d=\sqrt{3}a</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,54 +111,155 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "a": ({  a,  d,  })  => (d*d)/3,
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "d": ({  a,  d,  })  => (3**0.5)*a,
              
         }
 
         const units = {
             
-            "": [
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
                 
             ],
-            "": [
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
                 
             ],
         }
 
         const inputState = {
             
-            "n": {
+            "a": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
                 
             },
-            "f": {
+            "d": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}

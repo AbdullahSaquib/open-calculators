@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Log Calculator - Online Calculators</title>
+    <meta name="description" content="log calculator calculator. &lt;p&gt;Logarithms are a fundamental concept in mathematics, and they are used in a wide range of fields including science, engineering, and finance. In t…">
+    <meta name="keywords" content="Mathematics, Algebra, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +46,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="x" class="form-label">x</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="x" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,12 +59,25 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="log_x" class="form-label">Log (x)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="log_x" class="input form-control"
         data-has-calculator=1
         value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="b" class="form-label">Base</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="b" class="input form-control"
+        data-has-calculator=1
+        value=10.0>
     </div>
     
     
@@ -76,8 +89,20 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Log Calculator</h1>
+    <p>Logarithms are a fundamental concept in mathematics, and they are used in a wide range of fields including science, engineering, and finance. In this guide, we will explain what logarithms are, how to use a logarithm calculator, and some of the common applications of logarithms.</p>
+<h2>What are Logarithms?</h2>
+<p>A logarithm is a mathematical function that describes the relationship between a number and its power. The logarithm of a number is the exponent to which another fixed number, called the base, must be raised to produce that number. The most common base for logarithms is the number 10, and the logarithm is denoted by the symbol "log".</p>
+<h2>How to use a Logarithm Calculator?</h2>
+<p>Using a <strong>logarithm calculator</strong> is simple and straightforward. All you need to do is enter the number that you want to find the logarithm of, and the base of the logarithm (if other than 10). The calculator will then give you the logarithm of the entered number. Some logarithm calculators also have the option of entering an equation involving logarithms, and it will simplify the equation for you.</p>
+<h2>Applications of Logarithms</h2>
+<p>Logarithms have a wide range of applications in various fields. Some of the most common applications include:</p>
+<ul>
+  <li>Calculating the pH of a solution in chemistry</li>
+  <li>Measuring the intensity of earthquakes</li>
+  <li>Analyzing data in statistics and finance</li>
+  <li>Solving engineering and physics problems</li>
+</ul>
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +130,14 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "x": ({  x,  log_x,  b,  })  => b**(log_x),
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "log_x": ({  x,  log_x,  b,  })  => Math.log(x)/Math.log(b),
+              
+            "b": ({  x,  log_x,  b,  })  => x**(1/log_x),
              
         }
 
@@ -139,17 +149,26 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
-            "n": {
+            "x": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "log_x": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "b": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

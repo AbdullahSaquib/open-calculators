@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
+    
+    <title>Herons formula - Online Calculators</title>
+    <meta name="description" content="herons formula calculator. &lt;p&gt;Heron&#x27;s formula, also known as Hero&#x27;s formula, is a mathematical formula used to calculate the area of a triangle when the length of all three sid…">
+    <meta name="keywords" content="Mathematics, Triangle, Geometry, online calculator, calculator">
+
+    <meta name="author" content="cosmocalc.com">
+    <!-- CSS only -->
+    <link rel="preload" id="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'"/>
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></noscript>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#712cf9">
+</head>
+<body>
+
+    <div class="container py-3">
+        <header>
+            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="/static/cc_logo.svg" alt="cosmocalc.com logo" style="height:30px;">
+                    <span class="fs-4 mx-2">Online Calculators</span>
+                </a>
+                <!-- <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Physics</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Mathematics</a>
+                </nav> -->
+            </div>
+
+            
+            
+        </header>
+
+        <main>
+            <div class="row row-cols-1 row-cols-md-12 mb-3 justify-content-center">
+                
+<div class="col-md-4">
+    <div class="card mb-4 rounded-3 shadow-sm p-3">
+        
+        <div class="mb-3">
+    <label for="a" class="form-label">Side (a)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="a" class="input form-control"
+        
+        value=None>
+        <span><select class="form-select" name="" id="a__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="b" class="form-label">Side (b)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="b" class="input form-control"
+        
+        value=None>
+        <span><select class="form-select" name="" id="b__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="c" class="form-label">Side (c)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="c" class="input form-control"
+        
+        value=None>
+        <span><select class="form-select" name="" id="c__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="A" class="form-label">Area of triangle</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="A" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="A__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        
+    </div>
+    
+    <h2 class="display-8 fw-normal">Other Similar Calculators</h2>
+    
+    <a href="/area-of-triangle">Area of Triangle</a>
+    </br>
+    
+    <a href="/semiperimeter-of-triangle">Semiperimeter of Triangle</a>
+    </br>
+    
+    
+</div>
+<article class="col-md-6 text-center">
+    <h1 class="display-6 fw-normal">Herons formula</h1>
+    <p>Heron's formula, also known as Hero's formula, is a mathematical formula used to calculate the area of a triangle when the length of all three sides is known. The formula is named after the ancient Greek mathematician Hero of Alexandria, who is believed to have first discovered it.</p>
+
+<h2>Deriving Heron's Formula</h2>
+<p>To derive Heron's formula, we first need to understand the concept of the semi-perimeter of a triangle. The semi-perimeter is half the sum of the lengths of all three sides of a triangle. For example, if the three sides of a triangle are 4, 5, and 6, the semi-perimeter would be (4 + 5 + 6)/2 = 7.5. Now we can use the semi-perimeter to derive the formula.</p>
+<p>Heron's formula states that the area of a triangle can be calculated by taking the square root of the semi-perimeter multiplied by the difference of the semi-perimeter and each of the three sides. The formula is represented as follows:</p>
+
+<p class="latex"> Area = \sqrt{(s(s-a)(s-b)(s-c))}</p>
+<p>Where s is the semi-perimeter of the triangle, and a, b, and c are the lengths of the three sides of the triangle.</p>
+<h2>Using Heron's Formula</h2>
+<p>Now that we understand how Heron's formula is derived, let's see how it can be used to calculate the area of a triangle. Suppose we have a triangle with sides of length 4, 5, and 6. To find the area using Heron's formula, we first need to calculate the semi-perimeter:</p>
+<p>s = (4 + 5 + 6)/2 = 7.5</p>
+<p>Next, we substitute the values of s and the three sides into the formula:</p>
+<p>Area = √(7.5(7.5-4)(7.5-5)(7.5-6))</p>
+<p>Area = √(7.5 * 3.5 * 2.5 * 1.5) = √(98.4375) = 9.92</p>
+<p>So the area of the triangle is 9.92 square units.</p>
+<h2>Conclusion</h2>
+<p>Heron's formula is a useful mathematical tool for calculating the area of a triangle when the length of all three sides is known.
+</article>
+<div class="col-2"></div>
+
+            </div>
+            <div class="row row-cols-1 row-cols-md-12 mb-3 justify-content-center">
+                
+                
+            </div>
+        </main>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">Write to us at <a href = "mailto: support@cosmocalc.com">support@cosmocalc.com</a></small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">© 2022-2024 www.cosmocalc.com</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        
+
+        const calculators = {
+                   
+            "A": ({  a,  b,  c,  A,  })  => {
+s = (a+b+c)/2;
+return (s*(s-a)*(s-b)*(s-c))**(0.5);
+},
+             
+        }
+
+        const units = {
+            
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                
+            ],
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                
+            ],
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                
+            ],
+            "7717be6e-7d7e-41a3-960c-ce617ca7f2e1": [
+                {
+                "unit_short": "m^2",
+                "unit_long": "meter-square",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "mm^2",
+                "unit_long": "millimetres-square",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "cm^2",
+                "unit_long": "centimeter-square",
+                "toSI": x => x*0.0001,
+                "toUnit": x => x/0.0001
+                },
+                {
+                "unit_short": "km^2",
+                "unit_long": "kilometres-square",
+                "toSI": x => x*1000000.0,
+                "toUnit": x => x/1000000.0
+                },
+                
+            ],
+        }
+
+        const inputState = {
+            
+            "a": {
+                
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "b": {
+                
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "c": {
+                
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "A": {
+                
+                "units": "7717be6e-7d7e-41a3-960c-ce617ca7f2e1",
+                
+            },
+        };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}
+        Object.keys(inputState).forEach(inputId => {
+            if (inputState[inputId].units) {
+                inputState[inputId].toUnit = units[inputState[inputId].units][0].toUnit;
+                inputState[inputId].toSI = units[inputState[inputId].units][0].toSI;
+            }
+        })
+
+        function appendUnit(inputId) {
+            const listElement = document.getElementById(`${inputId}__units_list`);
+            try {
+                listElement.addEventListener("change", e => unitChangeHandler(inputId, e.currentTarget.value));
+                listElement.innerHTML = units[inputState[inputId].units].map(item => {
+                    return `<option value=${item.unit_long}>${item.unit_short}</option>`
+                }).join("");
+            } catch {
+                console.log("No units!");
+            }
+        }
+        Object.keys(inputState).forEach(appendUnit);
+
+        function unitChangeHandler(inputId, newUnit) {
+            const input = document.getElementById(inputId);
+            const currentValue = input.value;
+            const inputUnits = inputState[inputId]["units"];
+            const valueSI = inputState[inputId].toSI(currentValue);
+            const newUnitObject = units[inputUnits].find(x => x.unit_long === newUnit);
+            inputState[inputId].toSI = newUnitObject.toSI;
+            inputState[inputId].toUnit = newUnitObject.toUnit;
+            const newValue = inputState[inputId].toUnit(valueSI);
+            input.value = newValue;
+        }
+
+
+        const inputs = document.getElementsByClassName("input");
+
+        function calculate() {
+            const args = {};
+            for (let i = 0; i < inputs.length; i++) {
+                let element = inputs[i];
+                args[element.id] = inputState[element.id].toSI(Number(element.value));
+            }
+            const output = firstOutput();
+            let value = calculators[output.id](args);
+            const otherOutputDiv = output.parentElement.parentElement.getElementsByClassName("other-outputs")[0];
+            if (Array.isArray(value)) {
+                value.sort(x => -x);
+                value = value.map(inputState[output.id].toUnit);
+                output.value = value[0];
+                otherOutputDiv.innerHTML = `Other ${output.id} value(s): ${value.slice(1).join(", ")}`;
+            } else {
+                output.value = inputState[output.id].toUnit(value);
+                clearOtherOutputs();
+            }
+        }
+
+        const otherOutputDivs = document.getElementsByClassName("other-outputs");
+        function clearOtherOutputs() {
+            for (let i = 0; i < otherOutputDivs.length; i++) {
+                otherOutputDivs[i].innerHTML = "";
+            }
+        }
+
+        const outputOrder = new Set();
+        function pushToLast(element) {
+            if (outputOrder.has(element)) {
+                outputOrder.delete(element);
+            }
+            outputOrder.add(element);
+        }
+        function firstOutput() {
+            return outputOrder.values().next().value;
+        }
+
+        for (let i = 0; i < inputs.length; i++) {
+            let element = inputs[i];
+            if (element.dataset.hasCalculator) {
+                pushToLast(element);
+                element.addEventListener("keyup", e => pushToLast(e.currentTarget));
+            }
+            element.addEventListener("keyup", calculate);
+        }
+
+        document.querySelectorAll(".latex").forEach(node => {
+            const tex = node.innerText;
+            const url = "http://chart.apis.google.com/chart?cht=tx&chl=" + encodeURIComponent(tex);
+            const classList = node.classList;
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = tex;
+            node.innerHTML = "";
+            node.appendChild(img);
+        })
+    </script>
+
+</body>
+</html>

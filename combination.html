@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Combination - Online Calculators</title>
+    <meta name="description" content="combination calculator. &lt;p class=&quot;latex&quot;&gt;
+^nC_r = \frac{n!}{(n-r)!r!}
+&lt;/p&gt;">
+    <meta name="keywords" content="Mathematics, Combinatorics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,11 +48,11 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="n" class="form-label">Number of Distinct Objects(n)</label>
     
     <div class="input-group mb-3">
         <input type="number" id="n" class="input form-control"
-        data-has-calculator=1
+        
         value=None>
     </div>
     
@@ -59,10 +61,23 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="r" class="form-label">Number of Objects Taken at a Time (r)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="r" class="input form-control"
+        
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="c" class="form-label">Combination</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="c" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +91,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Combination</h1>
+    <p class="latex">
+^nC_r = \frac{n!}{(n-r)!r!}
+</p>
 </article>
 <div class="col-2"></div>
 
@@ -124,15 +141,16 @@ function invfactorial(y, start=1) {
         
 
         const calculators = {
-             
-            "n": ({  n,  f,  })  => invfactorial(f),
-              
-            "f": ({  n,  f,  })  => factorial(n),
+                 
+            "c": ({  n,  r,  c,  })  => factorial(n)/(factorial(n-r)*factorial(r)),
              
         }
 
         const units = {
             
+            "": [
+                
+            ],
             "": [
                 
             ],
@@ -149,7 +167,13 @@ function invfactorial(y, start=1) {
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "r": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "c": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

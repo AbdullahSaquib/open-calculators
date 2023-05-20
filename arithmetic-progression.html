@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Arithmetic Progression - Online Calculators</title>
+    <meta name="description" content="arithmetic progression calculator. &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt; - An Introduction&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Learn what an arithmetic progression is and h…">
+    <meta name="keywords" content="Mathematics, Chemistry, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,7 +50,33 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="a" class="form-label">First term</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="a" class="input form-control"
+        data-has-calculator=1
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="d" class="form-label">Common difference</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="d" class="input form-control"
+        data-has-calculator=1
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="n" class="form-label">Number of terms</label>
     
     <div class="input-group mb-3">
         <input type="number" id="n" class="input form-control"
@@ -59,10 +89,10 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="m" class="form-label">nth term in AP</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="m" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +106,37 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Arithmetic Progression</h1>
+    <!DOCTYPE html>
+<html>
+<head>
+	<title> - An Introduction</title>
+	<meta name="description" content="Learn what an arithmetic progression is and how to find the nth term of a sequence.">
+	<meta name="keywords" content="arithmetic progression, nth term, sequence, math">
+</head>
+<body>
+	<header>
+		<h1>Arithmetic Progression - An Introduction</h1>
+	</header>
+	<main>
+		<p>Arithmetic progression is a sequence of numbers where each term is obtained by adding a fixed number to the previous term. This fixed number is called the common difference. For example, the sequence 2, 5, 8, 11, 14 is an arithmetic progression with a common difference of 3.</p>
+<p>To find the nth term of an arithmetic progression, we use the formula:</p>
+	<p class="latex"> an = a1 + (n-1)d</p>
+	<p>where:</p>
+	<ul>
+		<li>an is the nth term</li>
+		<li>a1 is the first term</li>
+		<li>d is the common difference</li>
+		<li>n is the number of terms</li>
+	</ul>
+	
+	<p>Let's use this formula to find the 10th term of the sequence 3, 7, 11, 15, ...</p>
+	<p class="latex">a10 = 3 + (10-1)4</p>
+	<p class="latex">a10 = 39</p>
+	<p>So, the 10th term of the sequence is 39.</p>
+	
+	<p>Arithmetic progression is a fundamental concept in mathematics and is used in various fields such as physics, engineering, and finance. By understanding the basics of arithmetic progression and the formula to find the nth term, you can solve various problems in these fields.</p>
+</main>
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +164,16 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "a": ({  a,  d,  n,  m,  })  => m-(n-1)*d,
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "d": ({  a,  d,  n,  m,  })  => m-a/(n-1),
+              
+            "n": ({  a,  d,  n,  m,  })  => (m-a+d)/d,
+              
+            "m": ({  a,  d,  n,  m,  })  => a+(n-1)*d,
              
         }
 
@@ -139,17 +185,35 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "": [
+                
+            ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
+            "a": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "d": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
             "n": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "m": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
+    <title>Sum of n Natural Numbers - Online Calculators</title>
+    <meta name="description" content="sum of n natural numbers calculator. ">
     <meta name="keywords" content="Mathematics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
@@ -50,7 +50,7 @@
     
     <div class="input-group mb-3">
         <input type="number" id="n" class="input form-control"
-        data-has-calculator=1
+        
         value=None>
     </div>
     
@@ -59,10 +59,10 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="sum" class="form-label">Sum of natural numbers</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="sum" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,7 +76,7 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
+    <h1 class="display-6 fw-normal">Sum of n Natural Numbers</h1>
     
 </article>
 <div class="col-2"></div>
@@ -105,29 +105,10 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
-             
-            "n": ({  n,  f,  })  => invfactorial(f),
-              
-            "f": ({  n,  f,  })  => factorial(n),
+               
+            "sum": ({  n,  sum,  })  => n * (n+1)/2,
              
         }
 
@@ -149,7 +130,7 @@ function invfactorial(y, start=1) {
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "sum": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

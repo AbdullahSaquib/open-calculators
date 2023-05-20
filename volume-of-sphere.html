@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Volume of Sphere - Online Calculators</title>
+    <meta name="description" content="volume of sphere calculator. V = 4/3 πr³">
+    <meta name="keywords" content="Mathematics, Mensuration, Sphere, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +46,12 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="pi" class="form-label">pi</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
-        data-has-calculator=1
-        value=None>
+        <input type="number" id="pi" class="input form-control"
+        
+        value=3.1415>
     </div>
     
     
@@ -59,12 +59,27 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="r" class="form-label">Radius of Sphere</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="r" class="input form-control"
+        
+        value=None>
+        <span><select class="form-select" name="" id="r__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="v" class="form-label">Volume of Sphere</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="v" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="v__units_list"></select></span>
     </div>
     
     
@@ -76,8 +91,8 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Volume of Sphere</h1>
+    V = 4/3 πr³
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +120,10 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
-             
-            "n": ({  n,  f,  })  => invfactorial(f),
-              
-            "f": ({  n,  f,  })  => factorial(n),
+                 
+            "v": ({  pi,  r,  v,  })  => 4/3*pi*r*r*r,
              
         }
 
@@ -136,23 +132,96 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
-            "": [
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                
+            ],
+            "bcb2fd46-1afe-411c-97f3-52023a2ee271": [
+                {
+                "unit_short": "m^3",
+                "unit_long": "Meter cube",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
                 
             ],
         }
 
         const inputState = {
             
-            "n": {
+            "pi": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "r": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "v": {
+                
+                "units": "bcb2fd46-1afe-411c-97f3-52023a2ee271",
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}

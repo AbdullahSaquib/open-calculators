@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>REM to PX Converter - Online Calculators</title>
+    <meta name="description" content="rem to px converter calculator. Online calculator for converting REM to PX or vice versa. By default, the font size is 16 pixels, but you can also change the font size.
+
+&lt;h2&gt;Popul…">
+    <meta name="keywords" content="Pixel, HTML, CSS, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +48,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="r" class="form-label">REM</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="r" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,10 +61,10 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="p" class="form-label">Pixel (px)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="p" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -72,12 +74,123 @@
 </div>
         
         
+        <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#advanced-inputs" aria-expanded="false" aria-controls="advanced-inputs">
+            Advanced Inputs
+        </button>
+        <div class="collapse" id="advanced-inputs">
+            
+            <div class="mb-3">
+    <label for="b" class="form-label">Font Size (px)</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="b" class="input form-control"
+        
+        value=16.0>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+            
+        </div>
+        
     </div>
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">REM to PX Converter</h1>
+    Online calculator for converting REM to PX or vice versa. By default, the font size is 16 pixels, but you can also change the font size.
+
+<h2>Popular REM to PX Conversion Table
+</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Rem</th>
+      <th>Px</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5rem</td>
+      <td>8px</td>
+    </tr>
+    <tr>
+      <td>0.75rem</td>
+      <td>12px</td>
+    </tr>
+    <tr>
+      <td>1rem</td>
+      <td>16px</td>
+    </tr>
+    <tr>
+      <td>1.25rem</td>
+      <td>20px</td>
+    </tr>
+    <tr>
+      <td>1.5rem</td>
+      <td>24px</td>
+    </tr>
+    <tr>
+      <td>1.75rem</td>
+      <td>28px</td>
+    </tr>
+    <tr>
+      <td>2rem</td>
+      <td>32px</td>
+    </tr>
+    <tr>
+      <td>2.5rem</td>
+      <td>40px</td>
+    </tr>
+    <tr>
+      <td>3rem</td>
+      <td>48px</td>
+    </tr>
+    <tr>
+      <td>4rem</td>
+      <td>64px</td>
+    </tr>
+    <tr>
+      <td>5rem</td>
+      <td>80px</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When it comes to web design, using the correct units of measurement is crucial for creating a visually appealing and user-friendly website. Two of the most commonly used units of measurement in web design are <strong>REM</strong> and <strong>PX</strong>. In this guide, we will explain the difference between these units and provide a comprehensive guide on how to convert <strong>REM</strong> to <strong>PX</strong> using a <strong>REM to PX converter</strong>.</p>
+<h2>What is REM?</h2>
+<p>REM, or "root em," is a unit of measurement that is relative to the font size of the root element (usually the HTML element) on a webpage. This means that if the font size of the root element is set to 16px, 1rem is equal to 16px. This allows for easy scaling of font sizes throughout a website, as all font sizes can be set in relation to the root font size.</p>
+<h2>What is PX?</h2>
+<p>PX, or pixels, is a unit of measurement that is fixed and not relative to any other element on a webpage. Pixels are a physical measurement of an element on a screen, and the size of a pixel can vary depending on the device or screen size. This means that an element that is set to 100px on one device may appear larger or smaller on another device.</p>
+<h2>What is the formula to convert px to rem?</h2>
+<p>To convert pixels (px) to rems (rem), you need to know the current font size of the element and the font size of the root element. You can use the following formula to convert px to rem:
+</p>
+<strong>rem = px / root-font-size</strong>
+<p>where px is the value in pixels that you want to convert to rems, and root-font-size is the font size set on the root element of the document.
+
+For example, if you have an element with a font-size of 24px and the font-size of the root element is set to 16px, the calculation would be:
+<br/>
+rem = 24px / 16px = 1.5rem
+<br/>
+So, 24px is equivalent to 1.5rem in this case.
+</p>
+<h2>How to use a REM to PX Converter</h2>
+<p>To convert <strong>REM</strong> to <strong>PX</strong>, simply enter the <strong>REM</strong> value into the converter and set the root font size. The converter will then provide the equivalent <strong>PX</strong> value. </p>
+<h2>How do you convert REM to PX?</h2>
+<p>To convert rem to px, you can simply multiply the value in rem by the current font-size in pixels.
+
+For example, if you have an element with a font-size of 1.5rem and the font-size of the root element is set to 16px, then the calculation would be:
+
+1.5rem * 16px = 24px
+
+So, 1.5rem is equivalent to 24px in this case.
+</p>
+<h2>What is 1 REM in pixels?</h2>
+<p>The value of 1 REM in pixels depends on the font-size set on the root element of the document. By default, the root element is usually set to 16px, which means 1rem is equal to 16 pixels.
+However, if the font-size of the root element is changed, for example, if it's set to 20px, then 1rem would be equivalent to 20 pixels.</p>
+<h2>Why use a REM to PX Converter?</h2>
+<p>While both REM and PX have their own advantages, some developers prefer to use a <strong>REM to PX converter</strong> to convert the <strong>REM</strong> values to <strong>PX</strong> values for better control of the design. By using a <strong>REM to PX converter</strong>, developers can ensure that their design will look consistent across different devices and screen sizes. Additionally, using a <strong>REM to PX converter</strong> can make it easier to adjust the font size of specific elements on a webpage, as the <strong>PX</strong> values are fixed and not relative to other elements.</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,30 +218,13 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "r": ({  r,  p,  b,  })  => p/b,
               
-            "f": ({  n,  f,  })  => factorial(n),
-             
+            "p": ({  r,  p,  b,  })  => b*r,
+               
         }
 
         const units = {
@@ -139,17 +235,26 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
-            "n": {
+            "r": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "p": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "b": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

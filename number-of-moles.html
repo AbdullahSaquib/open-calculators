@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Number of Moles - Online Calculators</title>
+    <meta name="description" content="number of moles calculator. A mole (abbreviated mol) is the unit of measurement for amount of a substance in chemistry. One mole of a substance is equal to Avogadro&#x27;s number (6.…">
+    <meta name="keywords" content="Chemistry, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +46,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="a" class="form-label">Number of Atoms</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="a" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,10 +59,10 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="c" class="form-label">Number of Moles</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="c" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +76,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Number of Moles</h1>
+    A mole (abbreviated mol) is the unit of measurement for amount of a substance in chemistry. One mole of a substance is equal to Avogadro's number (6.022 x 10^23) of atoms, molecules, or other entities of that substance. For example, one mole of a solid element or compound contains Avogadro's number of atoms or molecules, while one mole of a gas has Avogadro's number of atoms or molecules in a particular volume at a given temperature and pressure.
+<p class = "latex">Number of Moles of an Element =\frac{Number of atoms}{Avogadro Constant}
+Where Avogadro Constant = 6.022*10^2^3</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +107,12 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "a": ({  a,  c,  })  => c*(6022*(10)**20),
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "c": ({  a,  c,  })  => a/(6022*10**20),
              
         }
 
@@ -143,13 +128,13 @@ function invfactorial(y, start=1) {
 
         const inputState = {
             
-            "n": {
+            "a": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "c": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

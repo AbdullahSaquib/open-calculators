@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Centripetal Force on Uniformly Moving Object - Online Calculators</title>
+    <meta name="description" content="centripetal force on uniformly moving object calculator. A centripetal force is the force required to keep an object in uniform circular motion. Its direction is towards the centre.
+&lt;p class =&quot;latex&quot;&gt;F_c =…">
+    <meta name="keywords" content="Physics, Rotational Mechanics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +47,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="m" class="form-label">Mass of Object</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="m" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,7 +60,33 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="v" class="form-label">Linear Velocity</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="v" class="input form-control"
+        data-has-calculator=1
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="r" class="form-label">Radius of the Circular Path</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="r" class="input form-control"
+        data-has-calculator=1
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="f" class="form-label">Centripetal Force</label>
     
     <div class="input-group mb-3">
         <input type="number" id="f" class="input form-control"
@@ -76,8 +103,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Centripetal Force on Uniformly Moving Object</h1>
+    A centripetal force is the force required to keep an object in uniform circular motion. Its direction is towards the centre.
+<p class ="latex">F_c = \frac{mv^2}{r}</p>
+where <span class ="latex">F_c</span> is the centripetal force ,v is the linear velocity ,r is the radius of circular path and m is the mass of Object.
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +134,16 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "m": ({  m,  v,  r,  f,  })  => (f*r)/(v**2),
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "v": ({  m,  v,  r,  f,  })  => ((f*r)/m)**1/2,
+              
+            "r": ({  m,  v,  r,  f,  })  => (m*v**2)/f,
+              
+            "f": ({  m,  v,  r,  f,  })  => (m*v**2)/r,
              
         }
 
@@ -139,11 +155,29 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "": [
+                
+            ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
-            "n": {
+            "m": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "v": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "r": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

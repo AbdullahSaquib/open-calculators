@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Permutation Without Repetition - Online Calculators</title>
+    <meta name="description" content="permutation without repetition calculator. &lt;p class=&quot;latex&quot;&gt;
+^nP_r=\frac{n!}{(n-r)!}
+&lt;/p&gt;">
+    <meta name="keywords" content="Mathematics, Combinatorics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +48,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="r" class="form-label">Number of Objects Taken at a Time (r)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="r" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,10 +61,23 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="n" class="form-label">Number of Distinct Objects(n)</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="n" class="input form-control"
+        
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="p" class="form-label">Permutations</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="p" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +91,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Permutation Without Repetition</h1>
+    <p class="latex">
+^nP_r=\frac{n!}{(n-r)!}
+</p>
 </article>
 <div class="col-2"></div>
 
@@ -125,9 +142,13 @@ function invfactorial(y, start=1) {
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
-              
-            "f": ({  n,  f,  })  => factorial(n),
+            "r": ({  r,  n,  p,  })  => {
+x = invfactorial(factorial(n)/p)
+if (x==null) return null;
+return n-x;
+},
+                
+            "p": ({  r,  n,  p,  })  => factorial(n)/factorial(n-r),
              
         }
 
@@ -139,17 +160,26 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
+            "r": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
             "n": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "p": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

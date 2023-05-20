@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Area of a Sector of a Circle - Online Calculators</title>
+    <meta name="description" content="area of a sector of a circle calculator. Area of a sector of a Circle with radius r and angle with degree measure &lt;p class=&quot;latex&quot;&gt; \theta &lt;/p&gt;
+
+&lt;p class=&quot;latex&quot;&gt;A=\frac{ \theta }{360} \pi…">
+    <meta name="keywords" content="Mathematics, Mensuration, Circle, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +48,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="r" class="form-label">Radius</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="r" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="r__units_list"></select></span>
     </div>
     
     
@@ -59,12 +62,40 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="t" class="form-label">Value of theta</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="t" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="t__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="pi" class="form-label">Pi</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="pi" class="input form-control"
+        
+        value=3.1415>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="a" class="form-label">Area of the sector</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="a" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="a__units_list"></select></span>
     </div>
     
     
@@ -76,8 +107,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Area of a Sector of a Circle</h1>
+    Area of a sector of a Circle with radius r and angle with degree measure <p class="latex"> \theta </p>
+
+<p class="latex">A=\frac{ \theta }{360} \pi r^2</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,54 +138,162 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "r": ({  r,  t,  pi,  a,  })  => ((a*360)/(pi*t))**(1/2),
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "t": ({  r,  t,  pi,  a,  })  => (a*360)/(pi*r*r),
+                
+            "a": ({  r,  t,  pi,  a,  })  => (t/360)*pi*r*r,
              
         }
 
         const units = {
             
-            "": [
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                
+            ],
+            "c10fa9cd-257d-4e95-8e37-fd17b1193a85": [
+                {
+                "unit_short": "Degree",
+                "unit_long": "Degree",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "Radians",
+                "unit_long": "Radians",
+                "toSI": x => x*57.29577951,
+                "toUnit": x => x/57.29577951
+                },
+                {
+                "unit_short": "Minutes",
+                "unit_long": "Minutes",
+                "toSI": x => x*0.0166666667,
+                "toUnit": x => x/0.0166666667
+                },
+                {
+                "unit_short": "Seconds",
+                "unit_long": "Seconds",
+                "toSI": x => x*0.000277777778,
+                "toUnit": x => x/0.000277777778
+                },
                 
             ],
             "": [
+                
+            ],
+            "7717be6e-7d7e-41a3-960c-ce617ca7f2e1": [
+                {
+                "unit_short": "m^2",
+                "unit_long": "meter-square",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "cm^2",
+                "unit_long": "centimeter-square",
+                "toSI": x => x*0.0001,
+                "toUnit": x => x/0.0001
+                },
+                {
+                "unit_short": "mm^2",
+                "unit_long": "millimetres-square",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "km^2",
+                "unit_long": "kilometres-square",
+                "toSI": x => x*1000000.0,
+                "toUnit": x => x/1000000.0
+                },
                 
             ],
         }
 
         const inputState = {
             
-            "n": {
+            "r": {
+                
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "t": {
+                
+                "units": "c10fa9cd-257d-4e95-8e37-fd17b1193a85",
+                
+            },
+            "pi": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "a": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "7717be6e-7d7e-41a3-960c-ce617ca7f2e1",
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}

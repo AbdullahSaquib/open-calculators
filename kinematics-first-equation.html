@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>Kinematics first equation - Online Calculators</title>
+    <meta name="description" content="kinematics first equation calculator. v = u + at">
+    <meta name="keywords" content="Physics, Kinematics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,10 +46,10 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="a" class="form-label">Acceleration</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="a" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -59,10 +59,37 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="t" class="form-label">Time</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="t" class="input form-control"
+        data-has-calculator=1
+        value=None>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="u" class="form-label">Initial Velocity</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="u" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="u__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="v" class="form-label">Final Velocity</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="v" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +103,8 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">Kinematics first equation</h1>
+    v = u + at
 </article>
 <div class="col-2"></div>
 
@@ -105,29 +132,16 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "a": ({  a,  t,  u,  v,  })  => (v - u)/t,
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "t": ({  a,  t,  u,  v,  })  => (v - u)/a,
+              
+            "u": ({  a,  t,  u,  v,  })  => v - a*t,
+              
+            "v": ({  a,  t,  u,  v,  })  => u + a*t,
              
         }
 
@@ -139,17 +153,40 @@ function invfactorial(y, start=1) {
             "": [
                 
             ],
+            "4ba14868-9963-46a4-bf70-426a24b3ce8b": [
+                {
+                "unit_short": "m/s",
+                "unit_long": "meter-per-second",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                
+            ],
+            "": [
+                
+            ],
         }
 
         const inputState = {
             
-            "n": {
+            "a": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
                 
             },
-            "f": {
+            "t": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "u": {
+                
+                "units": "4ba14868-9963-46a4-bf70-426a24b3ce8b",
+                
+            },
+            "v": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,

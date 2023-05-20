@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Factorial of a Number - Online Calculators</title>
-    <meta name="description" content="factorial of a number calculator. ">
-    <meta name="keywords" content="Mathematics, online calculator, calculator">
+    <title>BMI - Online Calculators</title>
+    <meta name="description" content="bmi calculator. &lt;h1&gt;Understanding Body Mass Index (BMI) and Its Importance&lt;/h1&gt;
+&lt;p&gt;Body mass index, or BMI, is a measure of body fat based on a person&#x27;s height and …">
+    <meta name="keywords" content="Biology, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,12 +47,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="n" class="form-label">N</label>
+    <label for="w" class="form-label">Weight</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="n" class="input form-control"
+        <input type="number" id="w" class="input form-control"
         data-has-calculator=1
         value=None>
+        <span><select class="form-select" name="" id="w__units_list"></select></span>
     </div>
     
     
@@ -59,10 +61,24 @@
 </div>
         
         <div class="mb-3">
-    <label for="f" class="form-label">Factorial</label>
+    <label for="h" class="form-label">Height</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="f" class="input form-control"
+        <input type="number" id="h" class="input form-control"
+        data-has-calculator=1
+        value=None>
+        <span><select class="form-select" name="" id="h__units_list"></select></span>
+    </div>
+    
+    
+    <div class="other-outputs form-text"></div>
+</div>
+        
+        <div class="mb-3">
+    <label for="b" class="form-label">BMI</label>
+    
+    <div class="input-group mb-3">
+        <input type="number" id="b" class="input form-control"
         data-has-calculator=1
         value=None>
     </div>
@@ -76,8 +92,26 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Factorial of a Number</h1>
-    
+    <h1 class="display-6 fw-normal">BMI</h1>
+    <h1>Understanding Body Mass Index (BMI) and Its Importance</h1>
+<p>Body mass index, or BMI, is a measure of body fat based on a person's height and weight. It is commonly used to determine whether a person is at a healthy weight, underweight, overweight, or obese. However, it is important to understand the limitations and potential inaccuracies of using BMI as a measure of health.</p>
+<h2>Calculating BMI</h2>
+<p>To calculate BMI, you will need to know your weight in kilograms and your height in meters. The formula for BMI is as follows:</p>
+<p class="latex">BMI = weight (kg) / height (m)<sup>2</sup></p>
+<p>For example, if you weigh 70 kg and are 1.75 meters tall, your BMI would be:</p>
+<p>BMI = 70 / (1.75<sup>2</sup>) = 22.8</p>
+<h2>Interpreting BMI Results</h2>
+<p>BMI results are often categorized into different ranges, with each range indicating a different level of health risk. The World Health Organization (WHO) categorizes BMI results as follows:</p>
+<ul>
+  <li>Underweight: less than 18.5</li>
+  <li>Normal weight: 18.5 to 24.9</li>
+  <li>Overweight: 25 to 29.9</li>
+  <li>Obese: 30 or greater</li>
+</ul>
+<p>It's important to note that this categorization is not ideal for everyone, for example for athletes, older people or some ethnic groups, the categorization may not be accurate. Therefore, it should be used with caution and in conjunction with other health assessments, such as measuring body fat percentage or consulting a healthcare professional.</p>
+<h2>Limitations of BMI</h2>
+<p>While BMI can be a useful tool for determining whether a person is at a healthy weight, it has several limitations. For example, BMI does not take into account factors such as muscle mass or bone density, which can affect a person's weight. Additionally, BMI does not account for the distribution of body fat, which can be more dangerous when concentrated in the abdominal area.</p>
+<p>In conclusion, BMI is a useful tool for assessing weight and determining whether a person is at a healthy weight, but it has limitations and should be used with caution. It is important to consult with a healthcare professional and consider other measures of health, such as body fat percentage and overall fitness level, when determining your overall health status.</p>
 </article>
 <div class="col-2"></div>
 
@@ -105,35 +139,95 @@
     
     <script>
         
-        function factorial(n) {
-  if (n==Infinity) return null;
-  if (n<1) return 1;
-  return n*factorial(n-1);
-}
-
-function invfactorial(y, start=1) {
-  if (y==Infinity) return null;
- j=start;
- while (y>1){
-    j++;
-    y = y/j;
-  }
-  if (y!=1) return null;
-  return j;
-}
-        
 
         const calculators = {
              
-            "n": ({  n,  f,  })  => invfactorial(f),
+            "w": ({  w,  h,  b,  })  => b*h*h,
               
-            "f": ({  n,  f,  })  => factorial(n),
+            "h": ({  w,  h,  b,  })  => (w/b)**(1/2),
+              
+            "b": ({  w,  h,  b,  })  => w/(h*h),
              
         }
 
         const units = {
             
-            "": [
+            "343f07cd-f57d-4598-8531-2bedbce2e722": [
+                {
+                "unit_short": "kg",
+                "unit_long": "Kilogram",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "lb",
+                "unit_long": "Pound",
+                "toSI": x => x*0.453592,
+                "toUnit": x => x/0.453592
+                },
+                
+            ],
+            "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9": [
+                {
+                "unit_short": "m",
+                "unit_long": "metre",
+                "toSI": x => x*1.0,
+                "toUnit": x => x/1.0
+                },
+                {
+                "unit_short": "km",
+                "unit_long": "kilometres",
+                "toSI": x => x*1000.0,
+                "toUnit": x => x/1000.0
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimetres",
+                "toSI": x => x*0.001,
+                "toUnit": x => x/0.001
+                },
+                {
+                "unit_short": "μm",
+                "unit_long": "micrometre",
+                "toSI": x => x*1e-06,
+                "toUnit": x => x/1e-06
+                },
+                {
+                "unit_short": "nm",
+                "unit_long": "manometers",
+                "toSI": x => x*1e-09,
+                "toUnit": x => x/1e-09
+                },
+                {
+                "unit_short": "in",
+                "unit_long": "inch",
+                "toSI": x => x*0.0254,
+                "toUnit": x => x/0.0254
+                },
+                {
+                "unit_short": "ft",
+                "unit_long": "feet",
+                "toSI": x => x*0.3048,
+                "toUnit": x => x/0.3048
+                },
+                {
+                "unit_short": "mi",
+                "unit_long": "miles",
+                "toSI": x => x*1609.344,
+                "toUnit": x => x/1609.344
+                },
+                {
+                "unit_short": "yd",
+                "unit_long": "yard",
+                "toSI": x => x*0.9144,
+                "toUnit": x => x/0.9144
+                },
+                {
+                "unit_short": "cm",
+                "unit_long": "centimetres",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
                 
             ],
             "": [
@@ -143,13 +237,17 @@ function invfactorial(y, start=1) {
 
         const inputState = {
             
-            "n": {
+            "w": {
                 
-                "toSI": x => x,
-                "toUnit": x => x,
+                "units": "343f07cd-f57d-4598-8531-2bedbce2e722",
                 
             },
-            "f": {
+            "h": {
+                
+                "units": "24ed18b5-9e1e-4f2e-88dd-5ee5a792c8c9",
+                
+            },
+            "b": {
                 
                 "toSI": x => x,
                 "toUnit": x => x,
