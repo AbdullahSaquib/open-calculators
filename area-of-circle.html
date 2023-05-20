@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Force Calculator - Online Calculators</title>
-    <meta name="description" content="force calculator calculator. Calculate force using mass and acceleration">
-    <meta name="keywords" content="Newtons Law, Mechanics, Physics, online calculator, calculator">
+    <title>Area of Circle - Online Calculators</title>
+    <meta name="description" content="area of circle calculator. ">
+    <meta name="keywords" content="Mathematics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,13 +46,13 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="mass" class="form-label">Mass</label>
+    <label for="r" class="form-label">Radius</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="mass" class="input form-control"
+        <input type="number" id="r" class="input form-control"
         data-has-calculator=1
         value=None>
-        <span><select class="form-select" name="" id="mass__units_list"></select></span>
+        <span><select class="form-select" name="" id="r__units_list"></select></span>
     </div>
     
     
@@ -60,40 +60,45 @@
 </div>
         
         <div class="mb-3">
-    <label for="acceleration" class="form-label">Acceleration</label>
+    <label for="A" class="form-label">Area</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="acceleration" class="input form-control"
+        <input type="number" id="A" class="input form-control"
         data-has-calculator=1
         value=None>
-        <span><select class="form-select" name="" id="acceleration__units_list"></select></span>
     </div>
     
     
     <div class="other-outputs form-text"></div>
 </div>
         
-        <div class="mb-3">
-    <label for="force" class="form-label">Force</label>
+        
+        <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#advanced-inputs" aria-expanded="false" aria-controls="advanced-inputs">
+            Advanced Inputs
+        </button>
+        <div class="collapse" id="advanced-inputs">
+            
+            <div class="mb-3">
+    <label for="pi" class="form-label">Pi</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="force" class="input form-control"
-        data-has-calculator=1
-        value=None>
-        <span><select class="form-select" name="" id="force__units_list"></select></span>
+        <input type="number" id="pi" class="input form-control"
+        
+        value=3.14>
     </div>
     
     
     <div class="other-outputs form-text"></div>
 </div>
-        
+            
+        </div>
         
     </div>
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Force Calculator</h1>
-    Calculate force using mass and acceleration
+    <h1 class="display-6 fw-normal">Area of Circle</h1>
+    
 </article>
 <div class="col-2"></div>
 
@@ -124,72 +129,60 @@
 
         const calculators = {
              
-            "mass": ({  mass,  acceleration,  force,  })  => args => args.force / args.acceleration,
+            "r": ({  r,  A,  pi,  })  => (A/pi)**0.5,
               
-            "acceleration": ({  mass,  acceleration,  force,  })  => args => args.force / args.mass,
-              
-            "force": ({  mass,  acceleration,  force,  })  => args => args.mass * args.acceleration,
-             
+            "A": ({  r,  A,  pi,  })  => pi*r**2,
+               
         }
 
         const units = {
             
-            "8c1ce63d-3e86-421f-a59f-3b25c53c32b1": [
+            "6c93b761-ce6b-4984-8223-e4b3bc6c8f39": [
                 {
-                "unit_short": "kg",
-                "unit_long": "Kilogram",
+                "unit_short": "m",
+                "unit_long": "Meter",
                 "toSI": x => x*1.0,
                 "toUnit": x => x/1.0
                 },
                 {
-                "unit_short": "g",
-                "unit_long": "Gram",
+                "unit_short": "cm",
+                "unit_long": "centimeter",
+                "toSI": x => x*0.01,
+                "toUnit": x => x/0.01
+                },
+                {
+                "unit_short": "mm",
+                "unit_long": "millimeter",
                 "toSI": x => x*0.001,
                 "toUnit": x => x/0.001
                 },
                 
             ],
-            "34d232da-2e57-462a-a87d-727ade63ba98": [
-                {
-                "unit_short": "m/s^2",
-                "unit_long": "m/s^2",
-                "toSI": x => x*1.0,
-                "toUnit": x => x/1.0
-                },
+            "": [
                 
             ],
-            "155e35d8-7531-48e7-85bd-7a5bde023989": [
-                {
-                "unit_short": "dyne",
-                "unit_long": "Dyne",
-                "toSI": x => x*100000.0,
-                "toUnit": x => x/100000.0
-                },
-                {
-                "unit_short": "N",
-                "unit_long": "Newton",
-                "toSI": x => x*1.0,
-                "toUnit": x => x/1.0
-                },
+            "": [
                 
             ],
         }
 
         const inputState = {
             
-            "mass": {
+            "r": {
                 
-                "units": "8c1ce63d-3e86-421f-a59f-3b25c53c32b1",
-                
-            },
-            "acceleration": {
-                
-                "units": "34d232da-2e57-462a-a87d-727ade63ba98",
+                "units": "6c93b761-ce6b-4984-8223-e4b3bc6c8f39",
                 
             },
-            "force": {
+            "A": {
                 
-                "units": "155e35d8-7531-48e7-85bd-7a5bde023989",
+                "toSI": x => x,
+                "toUnit": x => x,
+                
+            },
+            "pi": {
+                
+                "toSI": x => x,
+                "toUnit": x => x,
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}

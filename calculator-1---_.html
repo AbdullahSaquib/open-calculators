@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
     
-    <title>Force Calculator - Online Calculators</title>
-    <meta name="description" content="force calculator calculator. Calculate force using mass and acceleration">
-    <meta name="keywords" content="Newtons Law, Mechanics, Physics, online calculator, calculator">
+    <title>Calculator 1 - _ - Online Calculators</title>
+    <meta name="description" content="calculator 1 - _ calculator. HI &lt;br&gt;
+Next line &lt;br&gt;
+Next line 2">
+    <meta name="keywords" content="Physics, online calculator, calculator">
 
     <meta name="author" content="cosmocalc.com">
     <!-- CSS only -->
@@ -46,13 +48,12 @@
     <div class="card mb-4 rounded-3 shadow-sm p-3">
         
         <div class="mb-3">
-    <label for="mass" class="form-label">Mass</label>
+    <label for="x" class="form-label">x</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="mass" class="input form-control"
-        data-has-calculator=1
+        <input type="number" id="x" class="input form-control"
+        
         value=None>
-        <span><select class="form-select" name="" id="mass__units_list"></select></span>
     </div>
     
     
@@ -60,27 +61,12 @@
 </div>
         
         <div class="mb-3">
-    <label for="acceleration" class="form-label">Acceleration</label>
+    <label for="y" class="form-label">y</label>
     
     <div class="input-group mb-3">
-        <input type="number" id="acceleration" class="input form-control"
+        <input type="number" id="y" class="input form-control"
         data-has-calculator=1
         value=None>
-        <span><select class="form-select" name="" id="acceleration__units_list"></select></span>
-    </div>
-    
-    
-    <div class="other-outputs form-text"></div>
-</div>
-        
-        <div class="mb-3">
-    <label for="force" class="form-label">Force</label>
-    
-    <div class="input-group mb-3">
-        <input type="number" id="force" class="input form-control"
-        data-has-calculator=1
-        value=None>
-        <span><select class="form-select" name="" id="force__units_list"></select></span>
     </div>
     
     
@@ -92,8 +78,10 @@
     
 </div>
 <article class="col-md-6 text-center">
-    <h1 class="display-6 fw-normal">Force Calculator</h1>
-    Calculate force using mass and acceleration
+    <h1 class="display-6 fw-normal">Calculator 1 - _</h1>
+    HI <br>
+Next line <br>
+Next line 2
 </article>
 <div class="col-2"></div>
 
@@ -123,73 +111,33 @@
         
 
         const calculators = {
-             
-            "mass": ({  mass,  acceleration,  force,  })  => args => args.force / args.acceleration,
-              
-            "acceleration": ({  mass,  acceleration,  force,  })  => args => args.force / args.mass,
-              
-            "force": ({  mass,  acceleration,  force,  })  => args => args.mass * args.acceleration,
+               
+            "y": ({  x,  y,  })  => x+1,
              
         }
 
         const units = {
             
-            "8c1ce63d-3e86-421f-a59f-3b25c53c32b1": [
-                {
-                "unit_short": "kg",
-                "unit_long": "Kilogram",
-                "toSI": x => x*1.0,
-                "toUnit": x => x/1.0
-                },
-                {
-                "unit_short": "g",
-                "unit_long": "Gram",
-                "toSI": x => x*0.001,
-                "toUnit": x => x/0.001
-                },
+            "": [
                 
             ],
-            "34d232da-2e57-462a-a87d-727ade63ba98": [
-                {
-                "unit_short": "m/s^2",
-                "unit_long": "m/s^2",
-                "toSI": x => x*1.0,
-                "toUnit": x => x/1.0
-                },
-                
-            ],
-            "155e35d8-7531-48e7-85bd-7a5bde023989": [
-                {
-                "unit_short": "dyne",
-                "unit_long": "Dyne",
-                "toSI": x => x*100000.0,
-                "toUnit": x => x/100000.0
-                },
-                {
-                "unit_short": "N",
-                "unit_long": "Newton",
-                "toSI": x => x*1.0,
-                "toUnit": x => x/1.0
-                },
+            "": [
                 
             ],
         }
 
         const inputState = {
             
-            "mass": {
+            "x": {
                 
-                "units": "8c1ce63d-3e86-421f-a59f-3b25c53c32b1",
-                
-            },
-            "acceleration": {
-                
-                "units": "34d232da-2e57-462a-a87d-727ade63ba98",
+                "toSI": x => x,
+                "toUnit": x => x,
                 
             },
-            "force": {
+            "y": {
                 
-                "units": "155e35d8-7531-48e7-85bd-7a5bde023989",
+                "toSI": x => x,
+                "toUnit": x => x,
                 
             },
         };  // {<id>: {value: <value>, units: <units>, toUnit: <toUnit>, toSI: <toSI>}}
